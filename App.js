@@ -7,6 +7,8 @@ import TelaPrincipal from './screens/telaPrincipal'; // Importando telaPrincipal
 import TelaPergunta from './screens/telaPergunta';
 import Desempenho from './screens/desempenho';
 import Planos from './screens/planos';
+import Pagamento from './screens/pagamento';
+import Banco from './screens/banco';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +40,16 @@ export default function App() {
           name="Planos"
           component={Planos}
           options={{ title: 'Planos' }} 
+        />
+        <Stack.Screen
+          name="Pagamento"
+          component={Pagamento}
+          options={{ title: 'Pagamento' }} 
+        />
+        <Stack.Screen
+          name="Banco"
+          component={Banco}
+          options={{ title: 'Banco' }} 
         />
       </Stack.Navigator>
     </NavigationContainer>

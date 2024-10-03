@@ -18,7 +18,7 @@ export default function AppPremium({ navigation }) {
           <Text style={styles.text}>• Acesso até três áreas de disciplinas</Text>
         </Card.Content>
         <Card.Actions>
-          <Button mode="contained" onPress={() => navigation.navigate('PaymentScreen')}>
+          <Button mode="contained" onPress={() => navigation.navigate('Pagamento')}>
             Escolher Dendezinho
           </Button>
         </Card.Actions>
@@ -33,7 +33,7 @@ export default function AppPremium({ navigation }) {
           <Text style={styles.text}>• Acesso até cinco áreas de disciplinas</Text>
         </Card.Content>
         <Card.Actions>
-          <Button mode="contained" onPress={() => navigation.navigate('PaymentScreen')}>
+          <Button mode="contained" onPress={() => navigation.navigate('Pagamento')}>
             Escolher Dendê
           </Button>
         </Card.Actions>
@@ -48,7 +48,7 @@ export default function AppPremium({ navigation }) {
           <Text style={styles.text}>• Acesso ilimitado a todas as áreas do conhecimento</Text>
         </Card.Content>
         <Card.Actions>
-          <Button mode="contained" onPress={() => navigation.navigate('PaymentScreen')}>
+          <Button mode="contained" onPress={() => navigation.navigate('Pagamento')}>
             Escolher Dendezão
           </Button>
         </Card.Actions>

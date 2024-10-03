@@ -17,9 +17,6 @@ export default function TelaPrincipal({ navigation }) { // Adicione o parâmetro
       >
         <Text style={styles.buttonText}>Enviar uma pergunta</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Acesso ao banco de dados</Text>
-      </TouchableOpacity>
       <TouchableOpacity 
         style={styles.button}
         onPress={() => navigation.navigate('Desempenho')} // Adiciona a navegação ao botão
@@ -31,6 +28,13 @@ export default function TelaPrincipal({ navigation }) { // Adicione o parâmetro
         onPress={() => navigation.navigate('Planos')} // Adiciona a navegação ao botão
       >
         <Text style={styles.buttonText}>App Premium</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate('Banco')} // Adiciona a navegação ao botão
+      >
+        <Text style={styles.buttonText}>Banco de Dados</Text>
       </TouchableOpacity>
       
 

@@ -49,3 +49,6 @@ const styles = StyleSheet.create({
     color: '#000',
   },
 });
+
+
+//Iure Dev.

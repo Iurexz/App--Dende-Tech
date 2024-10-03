@@ -1,9 +1,30 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Dimensions, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Dimensions, Image, Alert } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
 export default function TelaPergunta() {
+  const [questions, setQuestions] = useState(Array(6).fill('')); // Estado para armazenar as 6 perguntas
+
+  // Função que será chamada ao clicar no botão "Enviar"
+  const handleSendPress = () => {
+    // Verificar se todas as perguntas foram preenchidas
+    const allFilled = questions.every(question => question.trim() !== '');
+
+    if (allFilled) {
+      Alert.alert("Confirmação", "Perguntas enviadas com sucesso!");
+    } else {
+      Alert.alert("Erro", "Por favor, preencha todas as perguntas antes de enviar.");
+    }
+  };
+
+  // Função para atualizar o valor de cada pergunta
+  const handleInputChange = (text, index) => {
+    const newQuestions = [...questions];
+    newQuestions[index] = text;
+    setQuestions(newQuestions);
+  };
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -18,17 +39,19 @@ export default function TelaPergunta() {
         />
         <Text style={styles.title}>Olá professor(a), insira suas perguntas.</Text>
         
-        {/* Campos de entrada */}
-        {Array.from({ length: 8 }, (_, index) => (
+        {/* Campos de entrada para 6 perguntas */}
+        {Array.from({ length: 6 }, (_, index) => (
           <TextInput
             key={index}
             style={styles.input}
             placeholder={`Pergunta ${index + 1}`}
             placeholderTextColor="#aaa"
+            value={questions[index]} // Valor controlado do input
+            onChangeText={text => handleInputChange(text, index)} // Atualizar o estado ao digitar
           />
         ))}
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleSendPress}>
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableOpacity>
       </View>
@@ -75,7 +98,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     borderRadius: 25,
     elevation: 5,
-    marginVertical: 10, // Menor margem vertical
+    marginTop: 30, // Botão mais acima
     alignItems: 'center', // Centraliza o texto dentro do botão
   },
   buttonText: {

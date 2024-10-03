@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import TelaInicio from './screens/telaInicio'; // Importando telaInicio
 import TelaPrincipal from './screens/telaPrincipal'; // Importando telaPrincipal
 import TelaPergunta from './screens/telaPergunta';
+import Desempenho from './screens/desempenho';
+import Planos from './screens/planos';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,16 @@ export default function App() {
           name="TelaPergunta"
           component={TelaPergunta}
           options={{ title: 'Perguntas' }} 
+        />
+        <Stack.Screen
+          name="Desempenho"
+          component={Desempenho}
+          options={{ title: 'Desempenho' }} 
+        />
+        <Stack.Screen
+          name="Planos"
+          component={Planos}
+          options={{ title: 'Planos' }} 
         />
       </Stack.Navigator>
     </NavigationContainer>

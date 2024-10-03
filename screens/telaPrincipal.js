@@ -20,9 +20,21 @@ export default function TelaPrincipal({ navigation }) { // Adicione o parâmetro
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Acesso ao banco de dados</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Parte premium</Text>
+      <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate('Desempenho')} // Adiciona a navegação ao botão
+      >
+        <Text style={styles.buttonText}>Desempenho da Turma</Text>
       </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.button}
+        onPress={() => navigation.navigate('Planos')} // Adiciona a navegação ao botão
+      >
+        <Text style={styles.buttonText}>App Premium</Text>
+      </TouchableOpacity>
+      
+
+      
     </View>
   );
 }
@@ -35,8 +47,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   logo: {
-    width: width * 0.6, // Ajusta a largura da imagem proporcionalmente
-    height: width * 0.6, // Ajusta a altura da imagem proporcionalmente
+    width: width * 0.8, // Ajusta a largura da imagem proporcionalmente
+    height: width * 0.8, // Ajusta a altura da imagem proporcionalmente
     marginBottom: 50,
   },
   button: {
@@ -53,3 +65,5 @@ const styles = StyleSheet.create({
     color: '#000',
   },
 });
+
+//Iure Dev.
